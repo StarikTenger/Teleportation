@@ -1,0 +1,27 @@
+﻿  DrawSystem.cpp
+C:\Users\ilyin\GitHub\Teleportation\Client\Client\DrawSystem.cpp(24,50): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Users\ilyin\GitHub\Teleportation\Client\Client\DrawSystem.cpp(24,50): warning C4244:         with
+C:\Users\ilyin\GitHub\Teleportation\Client\Client\DrawSystem.cpp(24,50): warning C4244:         [
+C:\Users\ilyin\GitHub\Teleportation\Client\Client\DrawSystem.cpp(24,50): warning C4244:             T=float
+C:\Users\ilyin\GitHub\Teleportation\Client\Client\DrawSystem.cpp(24,50): warning C4244:         ]
+C:\Users\ilyin\GitHub\Teleportation\Client\Client\DrawSystem.cpp(24,47): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Users\ilyin\GitHub\Teleportation\Client\Client\DrawSystem.cpp(24,47): warning C4244:         with
+C:\Users\ilyin\GitHub\Teleportation\Client\Client\DrawSystem.cpp(24,47): warning C4244:         [
+C:\Users\ilyin\GitHub\Teleportation\Client\Client\DrawSystem.cpp(24,47): warning C4244:             T=float
+C:\Users\ilyin\GitHub\Teleportation\Client\Client\DrawSystem.cpp(24,47): warning C4244:         ]
+C:\Users\ilyin\GitHub\Teleportation\Client\Client\DrawSystem.cpp(38,50): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Users\ilyin\GitHub\Teleportation\Client\Client\DrawSystem.cpp(38,50): warning C4244:         with
+C:\Users\ilyin\GitHub\Teleportation\Client\Client\DrawSystem.cpp(38,50): warning C4244:         [
+C:\Users\ilyin\GitHub\Teleportation\Client\Client\DrawSystem.cpp(38,50): warning C4244:             T=float
+C:\Users\ilyin\GitHub\Teleportation\Client\Client\DrawSystem.cpp(38,50): warning C4244:         ]
+C:\Users\ilyin\GitHub\Teleportation\Client\Client\DrawSystem.cpp(38,47): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Users\ilyin\GitHub\Teleportation\Client\Client\DrawSystem.cpp(38,47): warning C4244:         with
+C:\Users\ilyin\GitHub\Teleportation\Client\Client\DrawSystem.cpp(38,47): warning C4244:         [
+C:\Users\ilyin\GitHub\Teleportation\Client\Client\DrawSystem.cpp(38,47): warning C4244:             T=float
+C:\Users\ilyin\GitHub\Teleportation\Client\Client\DrawSystem.cpp(38,47): warning C4244:         ]
+  Generating code
+  1 of 499 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  Client.vcxproj -> C:\Users\ilyin\GitHub\Teleportation\Client\Release\Client.exe

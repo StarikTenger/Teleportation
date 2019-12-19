@@ -1,0 +1,13 @@
+To server:
+name
+pos
+state
+color
+
+To client:
+name
+type
+pos
+color
+hp
+points

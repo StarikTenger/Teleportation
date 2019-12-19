@@ -1,0 +1,44 @@
+﻿  Camera.cpp
+  Color.cpp
+C:\Users\ilyin\GitHub\Teleportation\Server\Server\Color.cpp(92,11): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\ilyin\GitHub\Teleportation\Server\Server\Color.cpp(111,25): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\ilyin\GitHub\Teleportation\Server\Server\Color.cpp(111,19): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\ilyin\GitHub\Teleportation\Server\Server\Color.cpp(111,16): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\ilyin\GitHub\Teleportation\Server\Server\Color.cpp(114,25): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\ilyin\GitHub\Teleportation\Server\Server\Color.cpp(114,22): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\ilyin\GitHub\Teleportation\Server\Server\Color.cpp(114,16): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\ilyin\GitHub\Teleportation\Server\Server\Color.cpp(117,25): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\ilyin\GitHub\Teleportation\Server\Server\Color.cpp(117,22): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\ilyin\GitHub\Teleportation\Server\Server\Color.cpp(117,16): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\ilyin\GitHub\Teleportation\Server\Server\Color.cpp(120,28): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\ilyin\GitHub\Teleportation\Server\Server\Color.cpp(120,22): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\ilyin\GitHub\Teleportation\Server\Server\Color.cpp(120,16): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\ilyin\GitHub\Teleportation\Server\Server\Color.cpp(123,28): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\ilyin\GitHub\Teleportation\Server\Server\Color.cpp(123,22): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\ilyin\GitHub\Teleportation\Server\Server\Color.cpp(123,16): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\ilyin\GitHub\Teleportation\Server\Server\Color.cpp(126,25): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\ilyin\GitHub\Teleportation\Server\Server\Color.cpp(126,19): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\ilyin\GitHub\Teleportation\Server\Server\Color.cpp(126,16): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\ilyin\GitHub\Teleportation\Server\Server\Color.cpp(172,29): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\ilyin\GitHub\Teleportation\Server\Server\Color.cpp(172,20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  Complex.cpp
+C:\Users\ilyin\GitHub\Teleportation\Server\Server\Color.cpp(172,15): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\ilyin\GitHub\Teleportation\Server\Server\Complex.cpp(36,11): warning C4244: 'initializing': conversion from 'long double' to 'float', possible loss of data
+  ExtMath.cpp
+C:\Users\ilyin\GitHub\Teleportation\Server\Server\Complex.cpp(37,11): warning C4244: 'initializing': conversion from 'long double' to 'float', possible loss of data
+C:\Users\ilyin\GitHub\Teleportation\Server\Server\ExtMath.cpp(10,50): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+C:\Users\ilyin\GitHub\Teleportation\Server\Server\ExtMath.cpp(96,83): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\ilyin\GitHub\Teleportation\Server\Server\ExtMath.cpp(96,56): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Graphics.cpp
+C:\Users\ilyin\GitHub\Teleportation\Server\Server\ExtMath.cpp(96,29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Main.cpp
+C:\Users\ilyin\GitHub\Teleportation\Server\Server\Graphics.h(8,10): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  ProgramCalculations.cpp
+C:\Users\ilyin\GitHub\Teleportation\Server\Server\Graphics.h(8,10): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  ProgramConsole.cpp
+C:\Users\ilyin\GitHub\Teleportation\Server\Server\Graphics.h(8,10): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  ProgramInterface.cpp
+C:\Users\ilyin\GitHub\Teleportation\Server\Server\Graphics.h(8,10): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Vector2.cpp
+  Generating Code...
+C:\Users\ilyin\GitHub\Teleportation\Server\Server\Graphics.h(8,10): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
