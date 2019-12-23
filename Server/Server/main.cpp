@@ -2,6 +2,7 @@
 #include "network.h"
 
 void gameLoop(Control& control) {
+	random::start();
 	while (1) {
 		//g_mutex.lock();
 		control.step();
@@ -11,18 +12,24 @@ void gameLoop(Control& control) {
 
 void conn(SOCKET& connection, Control& control) {
 	while (1) {
-		//g_mutex.lock();
+		
 		std::string s = recv(connection);
-		if (!s.size()) {
-			g_mutex.unlock();
-			break;
-		}
+
 		std::cout << "\n" << s << "\n";
+
+		if (s == "") {
+			closesocket(connection);
+			return;
+		}
+
+		g_mutex.lock();
 		control.command(s);
+		g_mutex.unlock();
+
 		std::string msg = control.message();
 		
 		send(connection, msg);
-		//g_mutex.unlock();
+		
 	}
 }
 

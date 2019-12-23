@@ -11,6 +11,8 @@ void DrawSystem::loadTexture(std::string name, std::string path) {
 
 void DrawSystem::loadTextures() {
 	font.loadFromFile("font.ttf");
-
+	loadTexture("skin", "textures/skin.png");
+	loadTexture("ball", "textures/ball.png");
+	loadTexture("background", "textures/background.png");
 	
 }

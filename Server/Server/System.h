@@ -7,15 +7,20 @@
 #include <SFML/Graphics.hpp>
 
 #include "Object.h"
+#include "Points.h"
 
 class System{
 public:
 	double dt = 0.02;
-	std::vector<Object> objects;
-
 	double defaultVel = 150;
 
+	std::vector<Object> objects;
+
+	Vector2d border = { 800, 800 };
+
 	std::deque<std::string> commands;
+
+	std::map<std::string, Points> table;
 
 	System();
 	~System();

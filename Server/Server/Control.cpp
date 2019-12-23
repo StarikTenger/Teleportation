@@ -49,14 +49,25 @@ std::string Control::message() {
 	std::string msg = "";
 	for (auto p : sys.objects) {
 		msg += "OBJ ";
-		msg += p.team + " ";
+		msg += p.token + " ";
 		msg += std::to_string(p.type) + " ";
 		msg += std::to_string((int)p.pos.x) + " ";
 		msg += std::to_string((int)p.pos.y) + " ";
+		msg += std::to_string((int)p.r) + " ";
 		msg += std::to_string((int)p.color.r) + " "  + std::to_string((int)p.color.g) + " " + std::to_string((int)p.color.b) + " ";
 		msg += std::to_string(p.hp) + " ";
-		msg += std::to_string(p.points) + " ";
 	}
+	msg += "TBL ";
+	for (const auto& p : sys.table) {
+		msg += p.first + " ";
+		msg += p.second.name + " ";
+		msg += std::to_string(p.second.color.r) + " " + 
+			std::to_string(p.second.color.g) + " " + 
+			std::to_string(p.second.color.b) + " ";
+		msg += std::to_string(p.second.kills) + " ";
+		msg += std::to_string(p.second.deaths) + " ";
+	}
+	std::cout << msg.size() << "\n";
 	return msg;
 }
 
@@ -68,17 +79,10 @@ void Control::step() {
 		
 		events();
 		//drawSys.mouse = mouse;
-		
-		
+
 		for (int i = 0; i < 1; i++) {
 			sys.step();
 		}
-		
-
-		//drawSys.system = &sys;
-		//drawSys.draw();
-		//drawSys.window->display();
-
-		
+			
 	}
 }

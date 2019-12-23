@@ -9,6 +9,8 @@
 
 #pragma warning(disable: 4996)
 
+#define BUFFLEN 1024
+
 std::mutex g_mutex;
 
 struct Address {
@@ -25,7 +27,7 @@ struct Address {
 };
 
 std::string recv(SOCKET& sock) {
-	char msg[256];
+	char msg[BUFFLEN];
 	int r = recv(sock, msg, sizeof(msg), NULL);
 	if (r <= 0)
 		return "";
@@ -34,7 +36,7 @@ std::string recv(SOCKET& sock) {
 }
 
 void send(SOCKET& sock, std::string s) {
-	char msg[256];
+	char msg[BUFFLEN];
 	strcpy(msg, s.c_str());
 	send(sock, msg, sizeof(msg), NULL);
 }

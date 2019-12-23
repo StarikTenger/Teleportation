@@ -7,10 +7,35 @@
 
 #pragma warning(disable: 4996)
 
+std::string makeToken() {
+	std::string token;
+
+	{
+		std::ifstream tokenFile("token.conf");
+		tokenFile >> token;
+		tokenFile.close();
+	}
+
+	if (token == "") {
+		std::string symbols = "0123456789";
+		for (int i = 0; i < 8; i++) {
+			token += symbols[random::intRandom(0, symbols.size() - 1)];
+			std::ofstream tokenFile("token.conf");
+			tokenFile << token;
+			tokenFile.close();
+		}
+	}
+	
+	return token;
+}
+
 int main() {
+	random::start();
+
 	Control control;
 
 	control.loadConfig("config.conf");
+	std::string token = makeToken();
 
 	//WSAStartup
 	startup();
@@ -29,6 +54,7 @@ int main() {
 		control.events();
 
 		std::string command;
+		command += token + " ";
 		command += control.name + " ";
 		command += std::to_string(control.mouse.pos.x) + " ";
 		command += std::to_string(control.mouse.pos.y) + " ";
@@ -39,7 +65,16 @@ int main() {
 
 		send(connection, command);
 		std::string s = recv(connection);
-		std::cout << s << std::endl;
+		//std::cout << s << std::endl;
+
+		if (s == "") {
+			closesocket(connection);
+			connection = socket(AF_INET, SOCK_STREAM, NULL);
+			if (connect(connection, (SOCKADDR*)&address.addr, sizeof(address.addr)) != 0) {
+				std::cout << "Error: failed connect to server.\n";
+				return 1;
+			}
+		}
 
 		control.drawSys.draw(s);
 		control.drawSys.window->display();
