@@ -67,7 +67,7 @@ std::string Control::message() {
 		msg += std::to_string(p.second.kills) + " ";
 		msg += std::to_string(p.second.deaths) + " ";
 	}
-	std::cout << msg.size() << "\n";
+	//std::cout << msg.size() << "\n";
 	return msg;
 }
 

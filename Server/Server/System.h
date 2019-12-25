@@ -20,7 +20,7 @@ public:
 
 	std::deque<std::string> commands;
 
-	std::map<std::string, Points> table;
+	std::map<std::string, Characteristic> table;
 
 	System();
 	~System();

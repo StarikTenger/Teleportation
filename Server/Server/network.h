@@ -17,9 +17,9 @@ struct Address {
 	SOCKADDR_IN addr;
 	int size;
 	Address() {};
-	Address(const char* host, int port) {
+	Address(std::string host, int port) {
 		size = sizeof(addr);
-		addr.sin_addr.s_addr = inet_addr(host);
+		addr.sin_addr.s_addr = inet_addr(host.c_str());
 		addr.sin_port = htons(port);
 		addr.sin_family = AF_INET;
 	};
@@ -29,8 +29,10 @@ struct Address {
 std::string recv(SOCKET& sock) {
 	char msg[BUFFLEN];
 	int r = recv(sock, msg, sizeof(msg), NULL);
-	if (r <= 0)
+	if (r <= 0) {
+		std::cout << "Error recv\n";
 		return "";
+	}
 	std::string s = std::string(msg);
 	return s;
 }
@@ -38,7 +40,9 @@ std::string recv(SOCKET& sock) {
 void send(SOCKET& sock, std::string s) {
 	char msg[BUFFLEN];
 	strcpy(msg, s.c_str());
-	send(sock, msg, sizeof(msg), NULL);
+	if (send(sock, msg, sizeof(msg), NULL) <= 0) {
+		std::cout << "Error send\n";
+	}
 }
 
 void startup() {

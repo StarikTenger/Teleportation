@@ -31,6 +31,21 @@ void DrawSystem::drawInterface() {
 	
 }
 
+void DrawSystem::step(double dt) {
+	for (auto& p : particles) {
+		p.pos += p.vel * dt;
+		p.r += p.rVel * dt;
+		p.timeLeft -= dt;
+	}
+
+	for (int i = 0; i < particles.size(); i++) {
+		if (particles[i].timeLeft > 0)
+			continue;
+		particles.erase(particles.begin() + i);
+		i--;
+	}
+}
+
 void DrawSystem::draw(std::string s) {
 	System& sys = *system;
 	window->clear();
@@ -39,6 +54,10 @@ void DrawSystem::draw(std::string s) {
 	window->setView(sf::View(sf::FloatRect(0, 0, w, h)));
 
 	image("background", 400, 400, 800, 800, 0);
+
+	for (auto p : particles) {
+		image(p.image, p.pos.x, p.pos.y, p.r * 2, p.r * 2, 0, p.col);
+	}
 
 	std::stringstream ss;
 	ss << s;
@@ -75,7 +94,10 @@ void DrawSystem::draw(std::string s) {
 				image("ball", pos.x, pos.y, r * 2.5, r * 2.5, ang, {0, 0, 0});
 				image("ball", pos.x, pos.y, r * 2, r * 2, ang, col);
 				image("ball", pos.x, pos.y, r * 1.5, r * 1.5, ang, { 255, 255, 255 });
-				//fillCircle(pos.x, pos.y, r-1, {0, 0, 0});
+
+				col.a = 255 * 0.3;
+				double d = 30;
+				particles.push_back(Particle("ball", pos, {random::floatRandom(-d, d, 2), random::floatRandom(-d, d, 2) }, 10, -20, col, 0.5));
 			}
 
 			
@@ -91,7 +113,6 @@ void DrawSystem::draw(std::string s) {
 			while (ss >> token && ss >> name && ss >> color.r && ss >> color.g && ss >> color.b && ss >> kills && ss >> deaths) {
 				std::string str = name + " " + kills + "X" + deaths;
 				text(str, 50, y, 20, color);
-				std::cout << str << "\n";
 				y += 20;
 			}
 		}

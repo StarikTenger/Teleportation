@@ -31,29 +31,36 @@ void System::step() {
 		
 		// table operations
 		if (table.find(token) == table.end()) {
-			table[token] = Points();
+			table[token] = Characteristic();
+			table[token].color = fromHSV(random::intRandom(0, 360), 1, 1);
 		}
 		table[token].name = name;
+		
 
-		int objectFound = 0;
+		int isObjectFound = 0;
+		Object* foundObj = nullptr;
 		for (auto& p : objects) {
 			if (p.token == token) {		
-				objectFound = 1;
+				isObjectFound = 1;
+				foundObj = &p;
 				if (p.type == 0)
 					p.afkTime = 5;
 			}
 		}
 
-		if (!objectFound) {
+		if (!isObjectFound) {
 			Object obj;
 			obj.pos = Vector2d(random::intRandom(0, border.x), random::intRandom(0, border.y));
-			obj.color = fromHSV(random::intRandom(0, 360), 1, 1);
+			obj.color = table[token].color;
 			obj.token = token;
 			objects.push_back(obj);
-			table[token].color = obj.color;
+			
 		} 
-		else if (state)
-			shoot(token, pos);
+		else {
+			
+			if(state)
+				shoot(token, pos);
+		}
 		
 	}
 

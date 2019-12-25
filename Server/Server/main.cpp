@@ -4,9 +4,7 @@
 void gameLoop(Control& control) {
 	random::start();
 	while (1) {
-		//g_mutex.lock();
 		control.step();
-		//g_mutex.unlock();
 	}
 }
 
@@ -14,8 +12,7 @@ void conn(SOCKET& connection, Control& control) {
 	while (1) {
 		
 		std::string s = recv(connection);
-
-		std::cout << "\n" << s << "\n";
+		//std::cout << "\n" << s << "\n";
 
 		if (s == "") {
 			closesocket(connection);
@@ -43,7 +40,14 @@ int main(){
 
 	startup();
 
-	Address address("192.168.0.12", 1111);
+	// address from file
+	std::ifstream configFile("config.conf");
+	std::string host;
+	int port;
+	configFile >> host;
+	configFile >> port;
+
+	Address address(host, 1111);
 	int sizeofaddr = sizeof(address.addr);
 
 	SOCKET sListen = socket(AF_INET, SOCK_STREAM, NULL);

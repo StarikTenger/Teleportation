@@ -2,7 +2,7 @@
 #include <string>
 #include "Color.h"
 
-class Points {
+class Characteristic {
 public:
 	std::string name = "qqq";
 	int kills = 0;;
@@ -10,7 +10,7 @@ public:
 
 	Color color;
 
-	Points() {};
-	~Points() {};
+	Characteristic() {};
+	~Characteristic() {};
 };
 

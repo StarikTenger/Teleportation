@@ -4,6 +4,7 @@
 #include <iostream>
 
 #include "network.h"
+#include "getMilliCount.h"
 
 #pragma warning(disable: 4996)
 
@@ -50,7 +51,11 @@ int main() {
 	}
 	std::cout << "Connected!\n";
 
+	
+
 	while (1) {
+		int64_t timePrev = 0;
+		timePrev = getMilliCount();
 		control.events();
 
 		std::string command;
@@ -65,7 +70,6 @@ int main() {
 
 		send(connection, command);
 		std::string s = recv(connection);
-		//std::cout << s << std::endl;
 
 		if (s == "") {
 			closesocket(connection);
@@ -76,6 +80,9 @@ int main() {
 			}
 		}
 
+		std::cout << getMilliCount() - timePrev << "\n";
+
+		control.drawSys.step((getMilliCount() - timePrev) / 1000.0);
 		control.drawSys.draw(s);
 		control.drawSys.window->display();
 	}

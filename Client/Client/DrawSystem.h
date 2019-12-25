@@ -1,10 +1,12 @@
 #pragma once
 #include <map>
+#include <vector>
 #include <SFML/Graphics.hpp>
 #include "Color.h"
 #include "System.h"
 #include "Camera.h"
 #include "Mouse.h"
+#include "Particle.h"
 
 class DrawSystem {
 public:
@@ -18,7 +20,9 @@ public:
 	double w, h;
 	double blockSize = 1;
 
+	std::vector<Particle> particles;
 
+	void step(double dt);
 	void draw(std::string s);
 	void drawScene();
 	void drawInterface();
